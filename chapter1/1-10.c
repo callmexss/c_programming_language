@@ -12,17 +12,18 @@ int main(int argc, char *argv[])
       putchar('t');
     }
 
-    if (c == '\b')
+    else if (c == '\b')
     {
       putchar('\\');
       putchar('b');
     }
 
-    if (c == '\\')
+    else if (c == '\\')
     {
       putchar('\\');
       putchar('\\');
     }
+    else putchar(c);
   }
   
 
