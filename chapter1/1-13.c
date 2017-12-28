@@ -1,9 +1,16 @@
 #include <stdio.h>
 
 #define MAXHIST 15
-#define MAXWORD 10
+#define MAXWORD 11
 #define IN      1
 #define OUT     0
+
+int isAlpha(char c)
+{
+  if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+    return 1;
+  return 0;
+}
 
 int main(int argc, char *argv[])
 {
@@ -16,6 +23,7 @@ int main(int argc, char *argv[])
   state = OUT;
   nc = 0;
   len = 0;
+  ovflow = 0;
   maxvalue = 0;
 
   while((c = getchar()) != EOF)
@@ -37,7 +45,7 @@ int main(int argc, char *argv[])
       state = IN; // start of a new word
       nc = 1;
     }
-    else 
+    else if (isAlpha(c)) 
       nc++; // still in a word
   }
 
