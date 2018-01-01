@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
         else
           ovflow++;
       }
-      nc = 0;
+      // nc = 0;
     }
     else if (state == OUT)
     {
