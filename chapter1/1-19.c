@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
   while ((len = getLine(line, MAXLEN)) > 0)
   {
     reverse(line, len);
-    printf("%s\n", line);
+    printf("%s", line);
   }
 
   return 0;
